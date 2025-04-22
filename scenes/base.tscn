@@ -1,0 +1,41 @@
+[gd_scene load_steps=9 format=3 uid="uid://cx64uo8j40i5f"]
+
+[ext_resource type="Texture2D" uid="uid://djgj8f65dj6tn" path="res://textures/DiamondPlate002_1K-PNG/DiamondPlate002_1K-PNG_Color.png" id="1_pvqg0"]
+[ext_resource type="Texture2D" uid="uid://cj8peuohvor48" path="res://textures/DiamondPlate002_1K-PNG/DiamondPlate002_1K-PNG_Displacement.png" id="2_40w10"]
+[ext_resource type="Texture2D" uid="uid://dim1e5p5eijon" path="res://textures/DiamondPlate002_1K-PNG/DiamondPlate002_1K-PNG_Metalness.png" id="3_xvvcp"]
+[ext_resource type="Texture2D" uid="uid://g3vkf68lubre" path="res://textures/DiamondPlate002_1K-PNG/DiamondPlate002_1K-PNG_NormalGL.png" id="4_hh5oj"]
+[ext_resource type="Texture2D" uid="uid://dfjqc0h6f5k2h" path="res://textures/DiamondPlate002_1K-PNG/DiamondPlate002_1K-PNG_Roughness.png" id="5_vqfsp"]
+[ext_resource type="Script" uid="uid://c5vh6kganxg8m" path="res://scenes/ScreenCapturer.cs" id="6_xvvcp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_baglu"]
+specular_mode = 1
+disable_ambient_light = true
+disable_fog = true
+albedo_texture = ExtResource("1_pvqg0")
+metallic_texture = ExtResource("3_xvvcp")
+roughness_texture = ExtResource("5_vqfsp")
+normal_enabled = true
+normal_texture = ExtResource("4_hh5oj")
+heightmap_enabled = true
+heightmap_scale = 0.25
+heightmap_texture = ExtResource("2_40w10")
+uv1_scale = Vector3(3, 3, 3)
+
+[sub_resource type="QuadMesh" id="QuadMesh_t45w4"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("6_xvvcp")
+resolutions = PackedVector2Array(128, 128, 256, 256, 512, 512)
+filePath = "/home/dogs/Dev/Godot/material-rasterer-(4.4.1)/textures/saved/"
+fileName = "DiamondPlate002"
+
+[node name="Camera3D" type="Camera3D" parent="."]
+projection = 1
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, -1)
+material_override = SubResource("StandardMaterial3D_baglu")
+mesh = SubResource("QuadMesh_t45w4")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
