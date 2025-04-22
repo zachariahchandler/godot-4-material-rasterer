@@ -3,30 +3,46 @@ using System;
 using System.Threading.Tasks;
 
 public partial class ScreenCapturer : Node {
-  [Export] Vector2[] resolutions;
+  [Export] bool enabled = true;
   
   [Export] string filePath; // the folder to save the image to
-  [Export] string fileName; // the name of the file sans extension
-  [Export] string extension = ".png";
+  [Export] string suffix = ".png";
+  
+  [Export] MeshInstance3D meshInstance;
+  
+  [Export] Material[] materials;
+  
+  [Export] Vector2[] resolutions;
   
   public override void _Ready () {
+    if (!enabled) {return;}
     CaptureScreen();
   }
   
-  public async Task CaptureScreen () {
+  public async Task CaptureScreen () {   
     Window window = GetWindow();
     Viewport viewport = GetViewport();
     
-    for (int i = 0; i < resolutions.Length; i++) {
-      window.Size = (Vector2I)resolutions[i];
+    for (int i = 0; i < materials.Length; i++) {
+      meshInstance.MaterialOverlay = materials[i];
       
-      await ToSignal(RenderingServer.Singleton, RenderingServerInstance.SignalName.FramePostDraw);
-      
-      string f = filePath + fileName + "_" + resolutions[i].X + "x" + resolutions[i].Y + extension;
-      
-      viewport.GetTexture().GetImage().SavePng(f);
-      
-      GD.Print("saving image: " + f);
+      for (int j = 0; j < resolutions.Length; j++) {
+        meshInstance.Show();
+        
+        window.Size = (Vector2I)resolutions[j];
+        
+        await ToSignal(RenderingServer.Singleton, RenderingServerInstance.SignalName.FramePostDraw);
+        
+        string f = filePath + materials[i].ResourceName + "_" + resolutions[j].X + "x" + resolutions[j].Y + suffix;
+        
+        viewport.GetTexture().GetImage().SavePng(f);
+        
+        GD.Print("saving image: " + f);
+        
+        meshInstance.Hide();
+        
+        await ToSignal(RenderingServer.Singleton, RenderingServerInstance.SignalName.FramePostDraw);
+      }
     }
     
     CallDeferred(MethodName.Quit);

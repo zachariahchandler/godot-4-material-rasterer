@@ -1,0 +1,23 @@
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://sqdt4f1dy67s"]
+
+[ext_resource type="Texture2D" uid="uid://djgj8f65dj6tn" path="res://textures/DiamondPlate002_1K-PNG/DiamondPlate002_1K-PNG_Color.png" id="1_oniiu"]
+[ext_resource type="Texture2D" uid="uid://cj8peuohvor48" path="res://textures/DiamondPlate002_1K-PNG/DiamondPlate002_1K-PNG_Displacement.png" id="2_cxwhm"]
+[ext_resource type="Texture2D" uid="uid://dim1e5p5eijon" path="res://textures/DiamondPlate002_1K-PNG/DiamondPlate002_1K-PNG_Metalness.png" id="3_lisic"]
+[ext_resource type="Texture2D" uid="uid://g3vkf68lubre" path="res://textures/DiamondPlate002_1K-PNG/DiamondPlate002_1K-PNG_NormalGL.png" id="4_uday2"]
+[ext_resource type="Texture2D" uid="uid://dfjqc0h6f5k2h" path="res://textures/DiamondPlate002_1K-PNG/DiamondPlate002_1K-PNG_Roughness.png" id="5_sqrty"]
+
+[resource]
+resource_name = "DiamondPlate002"
+diffuse_mode = 3
+specular_mode = 2
+disable_ambient_light = true
+disable_fog = true
+albedo_texture = ExtResource("1_oniiu")
+metallic_texture = ExtResource("3_lisic")
+roughness_texture = ExtResource("5_sqrty")
+normal_enabled = true
+normal_texture = ExtResource("4_uday2")
+heightmap_enabled = true
+heightmap_scale = 0.25
+heightmap_texture = ExtResource("2_cxwhm")
+uv1_scale = Vector3(3, 3, 3)

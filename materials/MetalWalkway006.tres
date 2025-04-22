@@ -1,0 +1,20 @@
+[gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://cp1725whgbtcp"]
+
+[ext_resource type="Shader" uid="uid://dclnj5g1oq6x" path="res://materials/StandardWithAlpha.tres" id="1_qijgt"]
+[ext_resource type="Texture2D" uid="uid://m43vs3yxbxav" path="res://textures/MetalWalkway006_1K-PNG/MetalWalkway006_1K-PNG_Color.png" id="2_cya7f"]
+[ext_resource type="Texture2D" uid="uid://c1g64p853uo3k" path="res://textures/MetalWalkway006_1K-PNG/MetalWalkway006_1K-PNG_Opacity.png" id="3_gmhhs"]
+[ext_resource type="Texture2D" uid="uid://c7ub8thyybj1p" path="res://textures/MetalWalkway006_1K-PNG/MetalWalkway006_1K-PNG_NormalGL.png" id="5_wvxri"]
+[ext_resource type="Texture2D" uid="uid://dek6asl1o2uc1" path="res://textures/MetalWalkway006_1K-PNG/MetalWalkway006_1K-PNG_Roughness.png" id="6_23vki"]
+
+[resource]
+resource_name = "MetalWalkway006"
+render_priority = 0
+shader = ExtResource("1_qijgt")
+shader_parameter/UV_Scale = Vector2(3, 3)
+shader_parameter/Albedo = ExtResource("2_cya7f")
+shader_parameter/Alpha = ExtResource("3_gmhhs")
+shader_parameter/Roughness = ExtResource("6_23vki")
+shader_parameter/Specular_Intensity = 0.16
+shader_parameter/AO_Light_Affect = 0.0
+shader_parameter/Normal_Map = ExtResource("5_wvxri")
+shader_parameter/Normal_Depth = 0.5

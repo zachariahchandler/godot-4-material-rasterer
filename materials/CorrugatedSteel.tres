@@ -1,0 +1,24 @@
+[gd_resource type="StandardMaterial3D" load_steps=7 format=3 uid="uid://bmlr281jk2j41"]
+
+[ext_resource type="Texture2D" uid="uid://ccoem1rf5d6ov" path="res://textures/CorrugatedSteel007B_1K-JPG/CorrugatedSteel007B_1K-JPG_Color.jpg" id="2_ayyoo"]
+[ext_resource type="Texture2D" uid="uid://gtcopm3j20rs" path="res://textures/CorrugatedSteel007B_1K-JPG/CorrugatedSteel007B_1K-JPG_AmbientOcclusion.jpg" id="3_1anj3"]
+[ext_resource type="Texture2D" uid="uid://bq7ikr8ohhp4t" path="res://textures/CorrugatedSteel007B_1K-JPG/CorrugatedSteel007B_1K-JPG_Displacement.jpg" id="3_ayyoo"]
+[ext_resource type="Texture2D" uid="uid://c0byr4k7gbca3" path="res://textures/CorrugatedSteel007B_1K-JPG/CorrugatedSteel007B_1K-JPG_Metalness.jpg" id="4_bqypx"]
+[ext_resource type="Texture2D" uid="uid://c7w8d6xyxqrnr" path="res://textures/CorrugatedSteel007B_1K-JPG/CorrugatedSteel007B_1K-JPG_NormalGL.jpg" id="5_h56ai"]
+[ext_resource type="Texture2D" uid="uid://cdll7t82npplx" path="res://textures/CorrugatedSteel007B_1K-JPG/CorrugatedSteel007B_1K-JPG_Roughness.jpg" id="6_sk4ni"]
+
+[resource]
+resource_name = "CorrugatedSteel"
+diffuse_mode = 1
+specular_mode = 2
+disable_fog = true
+albedo_texture = ExtResource("2_ayyoo")
+metallic = 1.0
+metallic_texture = ExtResource("4_bqypx")
+roughness_texture = ExtResource("6_sk4ni")
+normal_enabled = true
+normal_texture = ExtResource("5_h56ai")
+ao_enabled = true
+ao_texture = ExtResource("3_1anj3")
+heightmap_texture = ExtResource("3_ayyoo")
+uv1_scale = Vector3(3, 3, 3)

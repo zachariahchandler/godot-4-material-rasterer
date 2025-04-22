@@ -15,6 +15,17 @@ run/main_scene="uid://cx64uo8j40i5f"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=640
+window/size/viewport_height=640
+window/size/transparent=true
+window/per_pixel_transparency/allowed=true
+
 [dotnet]
 
 project/assembly_name="material rasterer (4.4.1)"
+
+[rendering]
+
+viewport/transparent_background=true
