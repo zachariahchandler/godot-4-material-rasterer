@@ -13,20 +13,20 @@ i like modelling with programs like [trenchbroom](https://trenchbroom.github.io/
 ## how to use:
 
 you will need:
-- godot 4.X .NET* (tested in 4.4.1)
+- godot 4.X .NET[^1] (tested in 4.4.1)
 - some textures for a PBR shader (i recommend [ambientcg](https://ambientcg.com/) for this)
 - that's it!
 
 in the base scene you will find a camera pointed at a quad with an example material applied.
 
-before hitting `play` you will need to set the exported `Resolutions`, `File Path`, `File Name`, and `Extension`** parameters in the `ScreenCapturer` script, which is attached to the node of the same name.
+before hitting `play` you will need to set the exported `Resolutions`, `File Path`, `File Name`, and `Extension`[^2] parameters in the `ScreenCapturer` script, which is attached to the node of the same name.
 
 once that's done, simply hit `play` and the program will save renders at all specified resolutions and automatically quit.
 
 ***
 
-*there *is* a gd script in this project which will save a render just like the c# version however it's not as fully featured at the moment. happy to improve the gd script if requested.
+[^1]: there *is* a gd script in this project which will save a render just like the c# version however it's not as fully featured at the moment. happy to improve the gd script if requested.
 
-**the `Extension` param *doesn't* change the format of the file, it's simply appended to the file's name when saved. happy to expand functionality if requested.
+[^2]: the `Extension` param *doesn't* change the format of the file, it's simply appended to the file's name when saved. happy to expand functionality if requested.
 
 
