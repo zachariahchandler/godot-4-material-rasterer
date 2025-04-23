@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://cx64uo8j40i5f"]
+[gd_scene load_steps=7 format=3 uid="uid://cx64uo8j40i5f"]
 
-[ext_resource type="Material" uid="uid://bmlr281jk2j41" path="res://materials/CorrugatedSteel.tres" id="2_baglu"]
-[ext_resource type="Material" uid="uid://g3ncq6hlv1qj" path="res://materials/invisible.tres" id="3_t45w4"]
+[ext_resource type="Material" uid="uid://ew1xsvxww3nm" path="res://materials/dontworryaboutit.tres" id="2_baglu"]
 [ext_resource type="Script" uid="uid://c5vh6kganxg8m" path="res://scripts/ScreenCapturer.cs" id="6_xvvcp"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_t45w4"]
@@ -17,22 +16,25 @@ background_color = Color(0, 0, 0, 0)
 sky = SubResource("Sky_40w10")
 ambient_light_source = 3
 reflected_light_source = 2
+adjustment_enabled = true
+adjustment_brightness = 0.9
+adjustment_contrast = 5.0
+adjustment_saturation = 1.42
 
 [node name="ScreenCapturer" type="Node3D" node_paths=PackedStringArray("meshInstance")]
 transform = Transform3D(1, 0, 0, 0, 1, 5.96046e-08, 0, -5.96046e-08, 1, 0, 0, 0)
 script = ExtResource("6_xvvcp")
 filePath = "/home/dogs/Dev/Common/ambient cg/_shrunk/"
-suffix = "_LitLeft_NoSpec.png"
 meshInstance = NodePath("MeshInstance3D")
 materials = Array[Material]([ExtResource("2_baglu")])
-resolutions = PackedVector2Array(128, 128, 256, 256, 512, 512)
+resolutions = PackedVector2Array(16, 16, 32, 32, 64, 64, 128, 128, 256, 256, 512, 512)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 projection = 1
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, -1)
-material_override = ExtResource("3_t45w4")
+material_override = ExtResource("2_baglu")
 mesh = SubResource("QuadMesh_t45w4")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]

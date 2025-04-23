@@ -21,6 +21,7 @@ public partial class ScreenCapturer : Node {
   
   public async Task CaptureScreen () {   
     Window window = GetWindow();
+    window.MinSize = new Vector2I(1,1); //this is to allow for really small renders, otherwise the default minimum is 64x64
     Viewport viewport = GetViewport();
     
     for (int i = 0; i < materials.Length; i++) {
